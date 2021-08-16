@@ -51,7 +51,7 @@ def topic_modeling(path_to_cleaned_txt_file, output_path, output_filename, tfidf
   with open(path_to_cleaned_txt_file, 'r') as file:
     processed_docs = file.readlines()
     processed_docs = [i.strip().split() for i in processed_docs]
-    processed_docs = [[i for i in j if not i in stop_words] for j in processed_docs][:20]
+    processed_docs = [[i for i in j if not i in stop_words] for j in processed_docs]
   #Bag of words on the dataset
   dictionary = gensim.corpora.Dictionary(processed_docs)
   count = 0
